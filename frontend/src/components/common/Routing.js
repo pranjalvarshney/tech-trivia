@@ -3,6 +3,7 @@ import { Route, Switch, useHistory } from 'react-router-dom'
 import { UserContext } from '../../App'
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
+import { Questionpage } from '../pages/quiz/Questionpage'
 import { Register } from '../pages/Register'
 
 export const Routing = () => {

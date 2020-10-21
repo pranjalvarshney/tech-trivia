@@ -22,7 +22,7 @@ export const Register = () => {
   }
 
   return (
-    <>
+    <div className='register-div'>
       <form className='login' onSubmit={handleRegister}>
         <input
           type='text'
@@ -47,6 +47,6 @@ export const Register = () => {
         />
         <button type='submit'>Login</button>
       </form>
-    </>
+    </div>
   )
 }

@@ -1,16 +1,25 @@
-body {
+/* body {
   background-color: #f45b69;
   font-family: 'Asap', sans-serif;
-}
-
-.login {
-  overflow: hidden;
-  background-color: white;
-  padding: 40px 30px 30px 30px;
-  border-radius: 10px;
+} */
+.login-div {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50% -50%);
+}
+.register-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+}
+.login {
+  overflow: hidden;
+  background-color: #a1bcc965;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+
   width: 400px;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);

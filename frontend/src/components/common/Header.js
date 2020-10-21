@@ -4,9 +4,9 @@ import './Header.css'
 
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
-    return { color: 'white' }
+    return { color: 'tomato' }
   } else {
-    return { color: 'grey' }
+    return { color: 'white' }
   }
 }
 

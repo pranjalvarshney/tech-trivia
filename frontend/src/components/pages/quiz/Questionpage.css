@@ -1,0 +1,31 @@
+.question-page {
+  display: flex;
+  height: calc(100vh - 100px);
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.question-part {
+  display: flex;
+  width: 90%;
+  height: 100%;
+  flex-direction: column;
+}
+.answer-options {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.answer-options > .answer-btn {
+  outline: none;
+  border: none;
+  height: 100px;
+  margin: 0.5%;
+  background-color: rgb(224, 224, 255);
+  width: 49%;
+  border-radius: 10px;
+  transition: 1s;
+}
+.answer-options > .answer-btn:hover {
+  background-color: rgba(57, 99, 214, 0.774);
+}

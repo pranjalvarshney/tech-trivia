@@ -19,7 +19,7 @@ export const Login = () => {
   }
 
   return (
-    <>
+    <div className='login-div'>
       <form className='login' onSubmit={handleLogin}>
         <input
           type='text'
@@ -37,6 +37,6 @@ export const Login = () => {
         />
         <button type='submit'>Login</button>
       </form>
-    </>
+    </div>
   )
 }
