@@ -1,22 +1,21 @@
 import React, { useState } from 'react'
 import './Login.css'
-import { auth } from '../../config/firebase'
+import { useHistory } from 'react-router-dom'
+import firebase from '../../config/firebase'
 
 export const Register = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  const history = useHistory()
   // console.log(name + email + password)
 
   const handleRegister = async (e) => {
     e.preventDefault()
 
     try {
-      await auth.createUserWithEmailAndPassword(email, password)
-      return auth.currentUser.updateProfile({
-        displayName: name,
-      })
+      await firebase.register(name, email, password)
+      history.replace('/login')
     } catch (error) {
       alert(error.message)
     }
