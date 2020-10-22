@@ -8,7 +8,6 @@ import { Register } from '../pages/Register'
 
 export const Routing = () => {
   const history = useHistory()
-  const { dispatch } = useContext(UserContext)
   return (
     <Switch>
       <Route exact path='/'>
