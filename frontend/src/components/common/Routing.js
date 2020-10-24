@@ -14,13 +14,11 @@ export const Routing = () => {
     <Switch>
       <Route exact path='/' component={Home} />
 
-
-      <Route exact path='/login' component={Login} />
       <Route exact path='/contact' component={Contact} />
-      <Route exact path='/login' component={Login} />
+      {/* <Route exact path='/login' component={Login} />
       <Route exact path='/register' component={Register} />
       <PrivateRoute exact path='/levels' component={QuizAllLevel} />
-      <PrivateRoute exact path='/round/1' component={Questionpage} /> 
+      <PrivateRoute exact path='/round/1' component={Questionpage} />  */}
       <Route to='/' component={ComingSoon} />
     </Switch>
   )
