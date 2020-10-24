@@ -1,11 +1,12 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import {Card,Row,Col} from 'react-bootstrap'
+import './Contact.css'
 export const Contact = () => {
     return (
         <Container>
-            <h3 className="font-weight-bold mb-5">If you require any further information, feel free to contact us.</h3>
-            <Row>
+            <h3 className="font-weight-bold mb-5 contact">If you require any further information, feel free to contact us.</h3>
+            <Row className="mt-2">
                 <Col xl="6">
                 <Card style={{width:'400px',backgroundColor:'transparent'}}>
   <Card.Header  className="text-center font-weight-bold">Pranjal Vashney</Card.Header>

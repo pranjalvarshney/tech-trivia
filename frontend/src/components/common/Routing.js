@@ -6,26 +6,21 @@ import { Login } from '../pages/Login'
 import { Questionpage } from '../pages/quiz/Questionpage'
 import { QuizAllLevel } from '../pages/quiz/QuizAllLevel'
 import { Register } from '../pages/Register'
-<<<<<<< Updated upstream
 import { ComingSoon } from './ComingSoon'
-=======
 import { Contact } from '../pages/Contact'
->>>>>>> Stashed changes
 
 export const Routing = () => {
   return (
     <Switch>
       <Route exact path='/' component={Home} />
-<<<<<<< Updated upstream
 
-      {/* <Route exact path='/login' component={Login} />
-=======
+
+      <Route exact path='/login' component={Login} />
       <Route exact path='/contact' component={Contact} />
       <Route exact path='/login' component={Login} />
->>>>>>> Stashed changes
       <Route exact path='/register' component={Register} />
       <PrivateRoute exact path='/levels' component={QuizAllLevel} />
-      <PrivateRoute exact path='/round/1' component={Questionpage} /> */}
+      <PrivateRoute exact path='/round/1' component={Questionpage} /> 
       <Route to='/' component={ComingSoon} />
     </Switch>
   )
