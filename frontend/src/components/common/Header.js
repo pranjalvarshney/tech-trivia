@@ -1,14 +1,25 @@
 import React, { useContext } from 'react'
-import { Link, useHistory, withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import './Header.css'
 import firebase from '../../config/firebase'
 import { UserContext } from '../../App'
 
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
-    return { color: 'tomato' }
+    return {
+      color: 'white',
+      background: '#e94057',
+      borderRadius: '20px',
+      padding: '3px 10px',
+      margin: '0 10px',
+    }
   } else {
-    return { color: 'white' }
+    return {
+      color: 'grey',
+      borderRadius: '20px',
+      padding: '3px 10px',
+      margin: '0 10px',
+    }
   }
 }
 
@@ -21,7 +32,7 @@ const Header = ({ history }) => {
     })
     firebase.signout()
   }
-
+  console.log(state.user)
   return (
     <div className='header'>
       <div className='header-wrapper'>
@@ -36,6 +47,7 @@ const Header = ({ history }) => {
               Home
             </Link>
           </li>
+
           <li>
             <Link
               style={currentTab(history, '/rules')}
@@ -46,7 +58,29 @@ const Header = ({ history }) => {
             </Link>
           </li>
           <li>
-            {!state.user && (
+            <Link
+              style={currentTab(history, '/contact')}
+              to='/rules'
+              className='link-header'
+            >
+              Contact
+            </Link>
+          </li>
+          {state.user ? (
+            <li>
+              <Link
+                style={currentTab(history, '/dashboard')}
+                to='/rules'
+                className='link-header'
+              >
+                Dashboard
+              </Link>
+            </li>
+          ) : (
+            ''
+          )}
+          {!state.user ? (
+            <li>
               <Link
                 style={currentTab(history, '/login')}
                 to='/login'
@@ -54,10 +88,12 @@ const Header = ({ history }) => {
               >
                 Login
               </Link>
-            )}
-          </li>
-          <li>
-            {!state.user && (
+            </li>
+          ) : (
+            ''
+          )}
+          {!state.user ? (
+            <li>
               <Link
                 style={currentTab(history, '/register')}
                 to='/register'
@@ -65,11 +101,18 @@ const Header = ({ history }) => {
               >
                 Register
               </Link>
-            )}
-          </li>
+            </li>
+          ) : (
+            ''
+          )}
           <li>
             {state.user && (
-              <Link onClick={handle_signout} to='/' className='link-header'>
+              <Link
+                onClick={handle_signout}
+                to='/'
+                style={{ color: 'grey' }}
+                className='link-header'
+              >
                 Logout
               </Link>
             )}

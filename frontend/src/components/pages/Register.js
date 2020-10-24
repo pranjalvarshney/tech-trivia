@@ -15,7 +15,7 @@ export const Register = () => {
 
     try {
       await firebase.register(name, email, password)
-      history.replace('/login')
+      history.replace('/')
     } catch (error) {
       alert(error.message)
     }

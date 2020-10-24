@@ -1,6 +1,6 @@
 .header {
   color: black;
-  background-color: rgba(2, 2, 92, 0.925);
+  background-color: rgba(0, 0, 0, 0);
   display: flex;
   width: 100vw;
   height: 100px;
@@ -16,13 +16,20 @@
   align-items: center;
 }
 .header-wrapper > h2 {
-  color: white;
+  color: Black;
+  font-family: 'Pacifico', cursive;
 }
 .header-li-options {
   display: flex;
+  text-decoration: none;
   list-style: none;
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: flex-end;
+  align-items: center;
   flex-direction: row;
 }
-.header-li-options > li {
-  padding: 0px 20px;
+
+.header-li-options :hover {
+  text-decoration: none;
 }

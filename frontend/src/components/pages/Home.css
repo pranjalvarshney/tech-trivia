@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600&display=swap');
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: calc(100vh - 100px);
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.event-logo {
+  height: 30vh;
+}
+.home-event-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 46px;
+  font-family: 'Grenze Gotisch', cursive;
+}
+.event-name {
+  font-family: 'Pacifico', cursive;
+}
+.home-event-banner-breaker {
+  width: 4px;
+  margin: 0 10px;
+  background-color: black;
+  height: 80px;
+}
+.timer-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 20px auto;
+  align-items: center;
+  justify-content: space-around;
+}
+.timer-col-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.timer-col-flex > span {
+  font-size: 42px;
+  font-weight: 600;
+}
+.timer-col-flex > p {
+  font-size: 26px;
+}
+.home-btns-rules {
+  outline: none;
+  border: 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 10px 30px;
+  background-color: lightblue;
+  margin: 0 20px;
+}
+
+.home-btns-go {
+  outline: none;
+  border: 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 10px 30px;
+  background-color: rgb(173, 230, 176);
+  margin: 0 20px;
+}

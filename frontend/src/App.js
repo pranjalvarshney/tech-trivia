@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useReducer } from 'react'
 import './App.css'
-import { BrowserRouter as Router, useHistory } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { Routing } from './components/common/Routing'
 import Header from './components/common/Header'
 import { initialState, reducer } from './reducer'
@@ -9,8 +9,6 @@ import firebase from './config/firebase'
 export const UserContext = createContext()
 
 const App = () => {
-  const history = useHistory()
-
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
