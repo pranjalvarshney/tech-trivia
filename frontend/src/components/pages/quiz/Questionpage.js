@@ -1,11 +1,13 @@
 import React from 'react'
 import './Questionpage.css'
 
+const optionButton = ({ answer }) => {}
+
 export const Questionpage = () => {
   return (
     <div className='question-page'>
       <div className='question-part'>
-        <h3>Which is the latest upcomming mac os?</h3>
+        <h5 className='question-div'>Which is the latest upcomming mac os?</h5>
         <div className='answer-options'>
           <button className='answer-btn'>Answer 1</button>
           <button className='answer-btn'>Answer 2</button>

@@ -47,11 +47,6 @@ export const Home = () => {
       setHours(hours)
       setMinutes(minutes)
       setSeconds(seconds)
-
-      // document.getElementById('days').innerHTML = days
-      // document.getElementById('hours').innerHTML = hours
-      // document.getElementById('minutes').innerHTML = minutes
-      // document.getElementById('seconds').innerHTML = seconds
     }
   }
 

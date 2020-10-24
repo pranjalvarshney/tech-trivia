@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link, useHistory, withRouter } from 'react-router-dom'
 import './Header.css'
 import firebase from '../../config/firebase'
 import { UserContext } from '../../App'
@@ -25,6 +25,7 @@ const currentTab = (history, path) => {
 
 const Header = ({ history }) => {
   const { state, dispatch } = useContext(UserContext)
+  const historypush = useHistory()
   const handle_signout = () => {
     dispatch({
       type: 'SIGN_OUT',
@@ -32,11 +33,17 @@ const Header = ({ history }) => {
     })
     firebase.signout()
   }
-  console.log(state.user)
   return (
     <div className='header'>
       <div className='header-wrapper'>
-        <h2>Tech Trivia</h2>
+        <h2
+          style={{ cursor: 'pointer' }}
+          onClick={() => {
+            historypush.push('/')
+          }}
+        >
+          Tech Trivia
+        </h2>
         <ul className='header-li-options'>
           <li>
             <Link
@@ -92,7 +99,7 @@ const Header = ({ history }) => {
           ) : (
             ''
           )}
-          {!state.user ? (
+          {/* {!state.user ? (
             <li>
               <Link
                 style={currentTab(history, '/register')}
@@ -104,7 +111,7 @@ const Header = ({ history }) => {
             </li>
           ) : (
             ''
-          )}
+          )} */}
           <li>
             {state.user && (
               <Link

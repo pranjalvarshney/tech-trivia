@@ -21,6 +21,7 @@ export const Login = () => {
   return (
     <div className='login-div'>
       <form className='login' onSubmit={handleLogin}>
+        <h4>Login</h4>
         <input
           type='text'
           placeholder='Username'
@@ -35,7 +36,21 @@ export const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type='submit'>Login</button>
+        <div className='button-div'>
+          <button type='submit'>Login</button>
+          <h6
+            onClick={() => {
+              history.push('/register')
+            }}
+            style={{
+              cursor: 'pointer',
+              textAlign: 'right',
+              margin: 'auto 0',
+            }}
+          >
+            New user! <br /> Register
+          </h6>
+        </div>
       </form>
     </div>
   )

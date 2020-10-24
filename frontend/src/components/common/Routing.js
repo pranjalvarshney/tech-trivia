@@ -1,18 +1,23 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import { PrivateRoute } from '../../auth/PrivateRoute'
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
-import { QuizLevel } from '../pages/quiz/QuizLevel'
+import { Questionpage } from '../pages/quiz/Questionpage'
+import { QuizAllLevel } from '../pages/quiz/QuizAllLevel'
 import { Register } from '../pages/Register'
+import { ComingSoon } from './ComingSoon'
 
 export const Routing = () => {
   return (
     <Switch>
       <Route exact path='/' component={Home} />
-      <Route exact path='/login' component={Login} />
+
+      {/* <Route exact path='/login' component={Login} />
       <Route exact path='/register' component={Register} />
-      <PrivateRoute exact path='/levels' component={QuizLevel} />
+      <PrivateRoute exact path='/levels' component={QuizAllLevel} />
+      <PrivateRoute exact path='/round/1' component={Questionpage} /> */}
+      <Route to='/' component={ComingSoon} />
     </Switch>
   )
 }

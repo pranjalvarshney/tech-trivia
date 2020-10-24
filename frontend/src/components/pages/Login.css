@@ -68,17 +68,17 @@
   width: 100%;
   border: 0;
   padding: 10px 10px;
-  margin: 15px -10px;
+  margin: 15px -3px;
 }
-.login > button {
+.login > .button-div > button {
   font-family: 'Asap', sans-serif;
   cursor: pointer;
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
-  width: 80px;
+
   border: 0;
-  padding: 10px 0;
+  padding: 8px 20px;
   margin-top: 10px;
   margin-left: -5px;
   border-radius: 5px;
@@ -87,7 +87,7 @@
   -moz-transition: background-color 300ms;
   transition: background-color 300ms;
 }
-.login > button:hover {
+.login > .button-div > button:hover {
   background-color: #f24353;
 }
 
@@ -122,4 +122,10 @@
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+.button-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -1,0 +1,13 @@
+.coming-soon {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 100px);
+  font-family: 'Pacifico', cursive;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.coming-soon > h1 {
+  font-size: 86px;
+  margin-bottom: 60px;
+}

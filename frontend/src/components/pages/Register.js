@@ -24,6 +24,7 @@ export const Register = () => {
   return (
     <div className='register-div'>
       <form className='login' onSubmit={handleRegister}>
+        <h4>Create a new account</h4>
         <input
           type='text'
           name='name'
@@ -45,7 +46,21 @@ export const Register = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type='submit'>Login</button>
+        <div className='button-div'>
+          <button type='submit'>Login</button>
+          <h6
+            onClick={() => {
+              history.push('/login')
+            }}
+            style={{
+              cursor: 'pointer',
+              textAlign: 'right',
+              margin: 'auto 0',
+            }}
+          >
+            Already have an account! <br /> Login
+          </h6>
+        </div>
       </form>
     </div>
   )
