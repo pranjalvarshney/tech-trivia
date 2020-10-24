@@ -1,16 +1,15 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container'
 import { Card, Row, Col } from 'react-bootstrap'
 import './Contact.css'
 export const Contact = () => {
   return (
-    <Container>
-      <h3 className='font-weight-bold mb-5 contact'>
+    <div>
+      <h3 className='my-5 font-weight-bold  contact'>
         For further queries, feel free to contact us.
       </h3>
-      <Row className='mt-2'>
-        <Col xl='6'>
-          <Card style={{ width: '400px', backgroundColor: 'transparent' }}>
+      <Row className='mx-auto justify-content-center'>
+        <Col xl='3'>
+          <Card style={{ backgroundColor: 'transparent' }}>
             <Card.Header className='text-center font-weight-bold'>
               Pranjal Vashney
             </Card.Header>
@@ -24,8 +23,8 @@ export const Contact = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col xl='6'>
-          <Card style={{ width: '400px', backgroundColor: 'transparent' }}>
+        <Col xl='3'>
+          <Card style={{ backgroundColor: 'transparent' }}>
             <Card.Header className='text-center font-weight-bold'>
               Mukul Rai
             </Card.Header>
@@ -40,6 +39,6 @@ export const Contact = () => {
           </Card>
         </Col>
       </Row>
-    </Container>
+    </div>
   )
 }

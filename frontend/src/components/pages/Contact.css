@@ -1,12 +1,13 @@
 .contact {
-    display: flex;
-    width: 100%;
-    font-family: 'Pacifico', cursive;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .contact > h3 {
-    font-size: 86px;
-    margin-bottom: 60px;
-  }
+  display: flex;
+  width: 100%;
+  font-family: 'Pacifico', cursive;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.contact > h3 {
+  font-size: 86px;
+  margin-bottom: 60px;
+}

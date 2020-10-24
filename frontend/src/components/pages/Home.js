@@ -51,9 +51,9 @@ export const Home = () => {
   }
 
   return (
-    <div className='container'>
+    <div id='container'>
       <div className='home-event-banner'>
-        <img src='abhivyanjana.png' className='event-logo' />
+        <img src='abhivyanjana.png' className='event-logo' alt='abhivyanjana' />
         <div className='home-event-banner-breaker'></div>
         <h1>
           Techno Cultural <br />

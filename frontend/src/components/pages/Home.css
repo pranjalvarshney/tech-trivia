@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600&display=swap');
 
-.container {
+#container {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100vw;
@@ -71,4 +72,50 @@
   padding: 10px 30px;
   background-color: rgb(173, 230, 176);
   margin: 0 20px;
+}
+@media only screen and (max-width: 600px) {
+  .event-logo {
+    height: 22vw;
+  }
+  .home-event-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Grenze Gotisch', cursive;
+  }
+  .home-event-banner > h1 {
+    font-size: 24px;
+  }
+  .event-name {
+    font-family: 'Pacifico', cursive;
+  }
+  .home-event-banner-breaker {
+    width: 4px;
+    margin: 0 10px;
+    background-color: black;
+    height: 60px;
+  }
+  .timer-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 20px auto;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .timer-col-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .timer-col-flex > span {
+    font-size: 42px;
+    font-weight: 600;
+  }
+  .timer-col-flex > p {
+    font-size: 16px;
+  }
 }
