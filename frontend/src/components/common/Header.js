@@ -67,7 +67,7 @@ const Header = ({ history }) => {
           <li>
             <Link
               style={currentTab(history, '/contact')}
-              to='/rules'
+              to='/contact'
               className='link-header'
             >
               Contact
