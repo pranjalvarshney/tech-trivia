@@ -1,0 +1,83 @@
+body {
+  margin: 20px;
+  padding: 0;
+}
+.wrapper {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  background: white;
+  margin: 40px auto;
+}
+
+.wrapper,
+.wrapper * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.pie {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: #08c;
+  border: 10px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  transform-origin: 100% 50%;
+}
+
+.spinner {
+  border-radius: 125px 0 0 125px;
+  z-index: 200;
+  border-right: none;
+  animation: rota 10s linear infinite;
+}
+
+.filler {
+  border-radius: 0 125px 125px 0;
+  z-index: 100;
+  border-left: none;
+  animation: fill 10s steps(1, end) infinite;
+  left: 50%;
+  opacity: 0;
+}
+
+.mask {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  z-index: 300;
+  opacity: 1;
+  background: inherit;
+  animation: mask 10s steps(1, end) infinite;
+}
+
+@keyframes rota {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mask {
+  0% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}

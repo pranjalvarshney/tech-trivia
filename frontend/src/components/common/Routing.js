@@ -8,6 +8,7 @@ import { QuizAllLevel } from '../pages/quiz/QuizAllLevel'
 import { Register } from '../pages/Register'
 import { ComingSoon } from './ComingSoon'
 import { Contact } from '../pages/Contact'
+import { QuizLevel } from '../pages/quiz/QuizLevel'
 
 export const Routing = () => {
   return (
@@ -18,7 +19,7 @@ export const Routing = () => {
       {/* <Route exact path='/login' component={Login} />
       <Route exact path='/register' component={Register} />
       <PrivateRoute exact path='/levels' component={QuizAllLevel} />
-      <PrivateRoute exact path='/round/1' component={Questionpage} />  */}
+      <PrivateRoute exact path='/round/1' component={QuizLevel} /> */}
       <Route to='/' component={ComingSoon} />
     </Switch>
   )

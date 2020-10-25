@@ -1,18 +1,20 @@
 import React from 'react'
 import './Questionpage.css'
 
-const optionButton = ({ answer }) => {}
+const OptionButton = ({ answer }) => {
+  return <button className='answer-btn'>{answer}</button>
+}
 
-export const Questionpage = () => {
+export const Questionpage = ({ questions }) => {
   return (
     <div className='question-page'>
       <div className='question-part'>
-        <h5 className='question-div'>Which is the latest upcomming mac os?</h5>
+        <h5 className='question-div'>{questions.question}</h5>
         <div className='answer-options'>
-          <button className='answer-btn'>Answer 1</button>
-          <button className='answer-btn'>Answer 2</button>
-          <button className='answer-btn'>Answer 3</button>
-          <button className='answer-btn'>Answer 4</button>
+          <OptionButton answer={questions.correct_answer}></OptionButton>
+          <OptionButton answer={questions.incorrect_answer[0]}></OptionButton>
+          <OptionButton answer={questions.incorrect_answer[1]}></OptionButton>
+          <OptionButton answer={questions.incorrect_answer[2]}></OptionButton>
         </div>
       </div>
     </div>
