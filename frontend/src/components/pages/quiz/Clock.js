@@ -2,13 +2,15 @@ import React from 'react'
 import './Clock.css'
 
 export const Clock = () => {
-  return (
-    <div>
-      <div class='wrapper'>
-        <div class='spinner pie'></div>
-        <div class='filler pie'></div>
-        <div class='mask'></div>
-      </div>
-    </div>
-  )
+  const value = 10
+  const startClock = (value) => {
+    let i = 0
+    setTimeout(() => {
+      if (i < value) {
+        i++
+        return <h2>{i}</h2>
+      }
+    }, 1000)
+  }
+  return <div>{startClock()}</div>
 }

@@ -14,14 +14,12 @@
   display: flex;
   width: 90%;
   height: 100px;
-
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
 }
 .header-wrapper > h2 {
   color: Black;
-
   font-family: 'Pacifico', cursive;
 }
 .header-li-options {
@@ -39,16 +37,4 @@
   text-decoration: none;
 }
 @media only screen and (max-width: 600px) {
-  .header-li-options {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5px;
-  }
-  .header-wrapper {
-    flex-direction: column;
-    justify-content: center;
-  }
 }
