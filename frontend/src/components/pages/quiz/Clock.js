@@ -12,5 +12,5 @@ export const Clock = () => {
       }
     }, 1000)
   }
-  return <div>{startClock()}</div>
+  return <div>{startClock(value)}</div>
 }

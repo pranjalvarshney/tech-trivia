@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../App'
 import { useHistory } from 'react-router-dom'
 import './Home.css'
+import firebase from '../../config/firebase'
 
 export const Home = () => {
   const [hours, setHours] = useState('00')
@@ -13,10 +15,30 @@ export const Home = () => {
 
   const history = useHistory()
 
+  const [userplayed, setUserplayed] = useState(false)
+
+  useEffect(() => {
+    firebase
+      .fetchDataScore()
+      .child('score')
+      .on('value', (snapshot) => {
+        if (snapshot.val() !== null) {
+          if (
+            Object.keys(snapshot.val()).filter(
+              (item) => snapshot.val()[item].email === firebase.getUserEmail()
+            )
+          ) {
+            setUserplayed(true)
+          }
+        }
+      })
+  }, [])
+
   let timer
   let compareDate = new Date(state.eventDate)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     timer = setInterval(function () {
       timeBetweenDates(compareDate)
     }, 1000)
@@ -89,14 +111,25 @@ export const Home = () => {
           >
             Rules
           </button>
-          <button
-            className='home-btns-go'
-            onClick={() => {
-              history.push('/levels')
-            }}
-          >
-            Let's go
-          </button>
+          {userplayed ? (
+            <button
+              className='home-btns-rules'
+              onClick={() => {
+                history.push('/leaderboard')
+              }}
+            >
+              Leaderboard
+            </button>
+          ) : (
+            <button
+              className='home-btns-rules'
+              onClick={() => {
+                history.push('/levels')
+              }}
+            >
+              Let's start
+            </button>
+          )}
         </div>
       ) : (
         <p>

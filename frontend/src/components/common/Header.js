@@ -73,7 +73,7 @@ const Header = ({ history }) => {
               Contact
             </Link>
           </li>
-          {state.user ? (
+          {state.user && (
             <li>
               <Link
                 style={currentTab(history, '/leaderboard')}
@@ -83,10 +83,8 @@ const Header = ({ history }) => {
                 Leaderboard
               </Link>
             </li>
-          ) : (
-            ''
           )}
-          {/* {!state.user ? (
+          {!state.user && (
             <li>
               <Link
                 style={currentTab(history, '/login')}
@@ -96,9 +94,7 @@ const Header = ({ history }) => {
                 Login
               </Link>
             </li>
-          ) : (
-            ''
-          )} */}
+          )}
           {/* {!state.user ? (
             <li>
               <Link

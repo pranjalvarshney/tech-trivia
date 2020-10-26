@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './QuizLevel.css'
-import axios from 'axios'
 import { Questionpage } from './Questionpage'
 import { Clock } from './Clock'
 import { UserContext } from '../../../App'
+import firebase from '../../../config/firebase'
 
 const allQuestions = [
   {
@@ -22,7 +22,7 @@ export const QuizLevel = () => {
 
   const [questions, setQuestions] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
-
+  const [userScore, setUserScore] = useState(0)
   const [startBtn, setStartBtn] = useState(true)
   const [ifGameEnded, setIfGameEnded] = useState(false)
 
@@ -48,11 +48,20 @@ export const QuizLevel = () => {
         type: 'INCREMENT_SCORE',
         score: state.score + 100,
       })
+      setUserScore(userScore + 100)
     }
     setCurrentIndex(newIndex)
     if (newIndex >= questions.length) {
       setIfGameEnded(true)
     }
+  }
+
+  if (ifGameEnded) {
+    firebase.submitScore({
+      name: firebase.getUserName(),
+      email: firebase.getUserEmail(),
+      score: userScore,
+    })
   }
 
   return (
@@ -67,7 +76,7 @@ export const QuizLevel = () => {
         </button>
       )}
       {ifGameEnded ? (
-        <div>The quiz ended ... yout score is {state.score}</div>
+        <div>The quiz ended ... yout score is {userScore}</div>
       ) : (
         !startBtn &&
         (questions.length > 0 ? (
