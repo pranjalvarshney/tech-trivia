@@ -1,18 +1,31 @@
 import React from 'react'
 import './Questionpage.css'
 
-const optionButton = ({ answer }) => {}
+export const Questionpage = ({ questions, handleAnswerBtn }) => {
+  const shuffledAnswer = [
+    questions.correct_answer,
+    ...questions.incorrect_answer,
+  ].sort(() => Math.random() - 0.5)
 
-export const Questionpage = () => {
+  console.log(shuffledAnswer)
   return (
     <div className='question-page'>
       <div className='question-part'>
-        <h5 className='question-div'>Which is the latest upcomming mac os?</h5>
+        <h5 className='question-div'>{questions.question}</h5>
         <div className='answer-options'>
-          <button className='answer-btn'>Answer 1</button>
-          <button className='answer-btn'>Answer 2</button>
-          <button className='answer-btn'>Answer 3</button>
-          <button className='answer-btn'>Answer 4</button>
+          {shuffledAnswer.map((item, index) => (
+            <button
+              key={index}
+              className={`${
+                questions.correct_answer === item ? 'bg-success' : ''
+              } answer-btn`}
+              onClick={() => {
+                handleAnswerBtn(item)
+              }}
+            >
+              {item}
+            </button>
+          ))}
         </div>
       </div>
     </div>

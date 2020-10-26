@@ -34,7 +34,7 @@
 .timer-wrapper {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 60%;
   margin: 20px auto;
   align-items: center;
   justify-content: space-around;
@@ -75,27 +75,24 @@
 }
 @media only screen and (max-width: 600px) {
   .event-logo {
-    height: 22vw;
+    height: 30vw;
   }
   .home-event-banner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    text-align: center;
     font-family: 'Grenze Gotisch', cursive;
   }
   .home-event-banner > h1 {
-    font-size: 24px;
+    font-size: 28px;
   }
   .event-name {
     font-family: 'Pacifico', cursive;
   }
   .home-event-banner-breaker {
-    width: 4px;
-    margin: 0 10px;
-    background-color: black;
-    height: 60px;
+    display: none;
   }
   .timer-wrapper {
     display: flex;

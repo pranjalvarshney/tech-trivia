@@ -76,17 +76,17 @@ const Header = ({ history }) => {
           {state.user ? (
             <li>
               <Link
-                style={currentTab(history, '/dashboard')}
-                to='/rules'
+                style={currentTab(history, '/leaderboard')}
+                to='/leaderboard'
                 className='link-header'
               >
-                Dashboard
+                Leaderboard
               </Link>
             </li>
           ) : (
             ''
           )}
-          {!state.user ? (
+          {/* {!state.user ? (
             <li>
               <Link
                 style={currentTab(history, '/login')}
@@ -98,7 +98,7 @@ const Header = ({ history }) => {
             </li>
           ) : (
             ''
-          )}
+          )} */}
           {/* {!state.user ? (
             <li>
               <Link
@@ -112,8 +112,8 @@ const Header = ({ history }) => {
           ) : (
             ''
           )} */}
-          <li>
-            {state.user && (
+          {state.user && (
+            <li>
               <Link
                 onClick={handle_signout}
                 to='/'
@@ -122,8 +122,8 @@ const Header = ({ history }) => {
               >
                 Logout
               </Link>
-            )}
-          </li>
+            </li>
+          )}
         </ul>
       </div>
     </div>

@@ -1,6 +1,7 @@
 export const initialState = {
   user: null,
   eventDate: 'Fri Oct 29 2020 14:30:0 GMT+0530 (India Standard Time)',
+  score: 0,
 }
 
 export const reducer = (state, action) => {
@@ -14,6 +15,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
         user: null,
+      }
+    case 'INCREMENT_SCORE':
+      return {
+        ...state,
+        score: action.score,
       }
     default:
       return state
