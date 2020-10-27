@@ -1,0 +1,25 @@
+.rules {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.rules-heading {
+  font-family: 'Pacifico', cursive;
+}
+.rules-wrapper {
+  width: 40%;
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .rules-wrapper {
+    width: 80%;
+  }
+}
+.rules-points {
+  color: rgb(196, 70, 70);
+}
+.media-body {
+  font-size: 14px;
+}

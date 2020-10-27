@@ -1,7 +1,6 @@
 .question-page {
   display: flex;
   height: calc(100vh - 100px);
-  width: 100vw;
   justify-content: center;
   align-items: center;
 }

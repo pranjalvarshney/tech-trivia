@@ -9,17 +9,19 @@ import { ComingSoon } from './ComingSoon'
 import { Contact } from '../pages/Contact'
 import { QuizLevel } from '../pages/quiz/QuizLevel'
 import { Leaderboard } from '../pages/Leaderboard'
+import { Rules } from '../pages/Rules'
 
 export const Routing = () => {
   return (
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/contact' component={Contact} />
-      <Route exact path='/login' component={Login} />
+      <Route exact path='/rules' component={Rules} />
+      {/* <Route exact path='/login' component={Login} />
       <Route exact path='/register' component={Register} />
       <PrivateRoute exact path='/leaderboard' component={Leaderboard} />
       <PrivateRoute exact path='/levels' component={QuizAllLevel} />
-      <PrivateRoute exact path='/round/1' component={QuizLevel} />
+      <PrivateRoute exact path='/round/1' component={QuizLevel} /> */}
       <Route to='/' component={ComingSoon} />
     </Switch>
   )
