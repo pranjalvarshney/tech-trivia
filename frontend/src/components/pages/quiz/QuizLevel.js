@@ -58,6 +58,7 @@ export const QuizLevel = () => {
   const [startBtn, setStartBtn] = useState(true)
   const [ifGameEnded, setIfGameEnded] = useState(false)
   const [showAnswers, setShowAnswers] = useState(false)
+  const [scoreSubmitted, setScoreSubmitted] = useState(false)
 
   const [timer, setTimer] = useState(10)
   // const [bonusTime, setbonusTime] = useState(0)
@@ -73,13 +74,13 @@ export const QuizLevel = () => {
   //     })
   // }
   useEffect(() => {
-    const questions = allQuestions.map((ques) => ({
+    const shuffledAnswerQuestions = allQuestions.map((ques) => ({
       ...ques,
       answer: [ques.correct_answer, ...ques.incorrect_answer].sort(
         () => Math.random() - 0.5
       ),
     }))
-    setQuestions(questions)
+    setQuestions(shuffledAnswerQuestions)
     // fetchQuestions()
   }, [])
 
@@ -96,6 +97,16 @@ export const QuizLevel = () => {
     setShowAnswers(true)
   }
 
+  const submitScore = () => {
+    if (!scoreSubmitted) {
+      firebase.submitScore({
+        name: firebase.getUserName(),
+        email: firebase.getUserEmail(),
+        score: userScore,
+      })
+      setScoreSubmitted(true)
+    }
+  }
   const handleNextQuestion = () => {
     setShowAnswers(false)
     let newIndex = currentIndex + 1
@@ -107,18 +118,12 @@ export const QuizLevel = () => {
   }
 
   if (ifGameEnded) {
-    firebase.submitScore({
-      name: firebase.getUserName(),
-      email: firebase.getUserEmail(),
-      score: userScore,
-    })
+    submitScore()
   }
-
   if (!showAnswers) {
     setTimeout(() => {
       if (timer <= 0) {
         setShowAnswers(true)
-        setTimer(0)
       } else {
         setTimer(timer - 1)
       }
