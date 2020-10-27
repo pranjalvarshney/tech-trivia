@@ -18,21 +18,22 @@ export const Home = () => {
   const [userplayed, setUserplayed] = useState(false)
 
   useEffect(() => {
-    firebase
-      .fetchDataScore()
-      .child('score')
-      .on('value', (snapshot) => {
-        if (snapshot.val() !== null) {
-          if (
-            Object.keys(snapshot.val()).filter(
-              (item) => snapshot.val()[item].email === firebase.getUserEmail()
-            )
-          ) {
-            setUserplayed(true)
+    if (state.user) {
+      firebase
+        .fetchDataScore()
+        .child('score')
+        .on('value', (snapshot) => {
+          if (snapshot.val() !== null) {
+            Object.keys(snapshot.val()).map((item) => {
+              if (snapshot.val()[item].email === firebase.getUserEmail()) {
+                setUserplayed(true)
+              }
+              return 0
+            })
           }
-        }
-      })
-  }, [])
+        })
+    }
+  }, [state.user])
 
   let timer
   let compareDate = new Date(state.eventDate)

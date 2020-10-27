@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
-import './QuizLevel.css'
+import './QuizAllLevel.css'
 
 export const QuizAllLevel = () => {
   const history = useHistory()
   return (
-    <div className='quiz-levels'>
+    <div className='quiz-all-levels'>
       <div className='level-wrapper'>
         <div
           className='level-div'
