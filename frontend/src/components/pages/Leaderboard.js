@@ -3,18 +3,26 @@ import firebase from '../../config/firebase'
 import './Leaderboard.css'
 
 export const Leaderboard = () => {
-  const [fetchData, setFetchData] = useState()
+  const [fetchData, setFetchData] = useState([])
 
   useEffect(() => {
+    const arr = []
     firebase
       .fetchDataScore()
       .child('score')
-      .on('value', (snapshot) => {
+      .orderByChild('score')
+      .on('child_added', (snapshot) => {
         if (snapshot.val() !== null) {
-          setFetchData(snapshot.val())
+          arr.push(snapshot.val())
         }
       })
+    setFetchData(arr)
   }, [])
+
+  const sortArray = () => {
+    return fetchData.sort((a, b) => b.score - a.score)
+  }
+  console.log(sortArray())
 
   return (
     <div className='leaderboard container'>
@@ -33,13 +41,13 @@ export const Leaderboard = () => {
               </tr>
             </thead>
             <tbody>
-              {Object.keys(fetchData).map((item, index) => {
+              {fetchData.map((item, index) => {
                 return (
                   <tr key={index}>
                     <th scope='row'>{index}</th>
-                    <td>{fetchData[item].name}</td>
-                    <td>{fetchData[item].email}</td>
-                    <td>{fetchData[item].score}</td>
+                    <td>{item.name}</td>
+                    <td>{item.email}</td>
+                    <td>{item.score}</td>
                   </tr>
                 )
               })}
