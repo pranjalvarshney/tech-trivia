@@ -1,6 +1,7 @@
 export const initialState = {
   user: null,
   eventDate: 'Fri Oct 29 2020 14:30:0 GMT+0530 (India Standard Time)',
+  startDate: 'Fri Oct 29 2020 14:45:0 GMT+0530 (India Standard Time)',
   score: 0,
 }
 
