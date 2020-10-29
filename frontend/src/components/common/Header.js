@@ -73,18 +73,16 @@ const Header = ({ history }) => {
               Contact
             </Link>
           </li>
-          {state.user && (
-            <li>
-              <Link
-                style={currentTab(history, '/leaderboard')}
-                to='/leaderboard'
-                className='link-header'
-              >
-                Leaderboard
-              </Link>
-            </li>
-          )}
-          {!state.user && (
+          <li>
+            <Link
+              style={currentTab(history, '/leaderboard')}
+              to='/leaderboard'
+              className='link-header'
+            >
+              Leaderboard
+            </Link>
+          </li>
+          {/* {!state.user && (
             <li>
               <Link
                 style={currentTab(history, '/login')}
@@ -94,7 +92,7 @@ const Header = ({ history }) => {
                 Login
               </Link>
             </li>
-          )}
+          )} */}
           {/* {!state.user ? (
             <li>
               <Link

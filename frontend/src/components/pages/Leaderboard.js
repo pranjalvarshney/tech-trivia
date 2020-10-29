@@ -4,7 +4,6 @@ import './Leaderboard.css'
 
 export const Leaderboard = () => {
   const [fetchData, setFetchData] = useState([])
-
   useEffect(() => {
     const arr = []
     firebase
@@ -22,8 +21,7 @@ export const Leaderboard = () => {
   const sortArray = () => {
     return fetchData.sort((a, b) => b.score - a.score)
   }
-  console.log(sortArray())
-
+  sortArray()
   return (
     <div className='leaderboard container'>
       <h1>Leaderboard</h1>
@@ -44,7 +42,7 @@ export const Leaderboard = () => {
               {fetchData.map((item, index) => {
                 return (
                   <tr key={index}>
-                    <th scope='row'>{index}</th>
+                    <th scope='row'>{index + 1}</th>
                     <td>{item.name}</td>
                     <td>{item.email}</td>
                     <td>{item.score}</td>

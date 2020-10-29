@@ -2,7 +2,9 @@ export const initialState = {
   user: null,
   eventDate: 'Fri Oct 29 2020 14:30:0 GMT+0530 (India Standard Time)',
   startDate: 'Fri Oct 29 2020 14:45:0 GMT+0530 (India Standard Time)',
+  endDate: 'Fri Oct 29 2020 14:50:0 GMT+0530 (India Standard Time)',
   score: 0,
+  join: false,
 }
 
 export const reducer = (state, action) => {
@@ -21,6 +23,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
         score: action.score,
+      }
+    case 'JOIN_GAME':
+      return {
+        ...state,
+        join: true,
       }
     default:
       return state

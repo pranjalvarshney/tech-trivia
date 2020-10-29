@@ -9,7 +9,7 @@ import LockOpenTwoToneIcon from '@material-ui/icons/LockOpenTwoTone'
 export const QuizAllLevel = () => {
   const history = useHistory()
 
-  const { state } = useContext(UserContext)
+  const { state, dispatch } = useContext(UserContext)
   const [isTime, setIsTime] = useState(false)
 
   let timer
@@ -37,11 +37,21 @@ export const QuizAllLevel = () => {
                 ? { backgroundColor: '#673ab7', color: 'white' }
                 : { backgroundColor: '#ff6767', color: 'white' }
             }
-            className='join-btn w-50 mx-auto'
+            className='join-btn w-100 mx-auto'
             onClick={
               isTime
                 ? () => {
-                    history.push(`/round/1`)
+                    if (!state.join) {
+                      dispatch({
+                        type: 'JOIN_GAME',
+                        join: true,
+                      })
+                      history.push(`/round/1`)
+                    } else {
+                      alert(
+                        'Sorry you cannot join the quiz again. Thank you for participating!'
+                      )
+                    }
                   }
                 : () => {
                     alert(`Quiz time : ${new Date(state.startDate)}`)
